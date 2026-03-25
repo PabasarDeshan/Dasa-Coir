@@ -122,6 +122,7 @@ nav ul li a {
     letter-spacing: 1.5px;
     transition: var(--transition);
     position: relative;
+    white-space: nowrap;
 }
 
 nav ul li a::after {
@@ -500,6 +501,20 @@ footer {
 .animate-fadeInUp {
     opacity: 1;
     transform: translateY(0) scale(1) !important;
+}
+
+/* Tablet & Small Laptop (MacBook) Tweaks (1200px down to 900px) */
+@media (max-width: 1200px) {
+    .nav-left, .nav-right {
+        gap: 1.5rem; /* Reduce gap between links */
+    }
+    .logo {
+        margin: 0 1.5rem; /* Reduce space around logo */
+    }
+    nav ul li a {
+        font-size: 0.75rem; /* Slightly smaller text to fit all 6 links */
+        letter-spacing: 1px;
+    }
 }
 
 @media (max-width: 900px) {
