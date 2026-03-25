@@ -1581,37 +1581,184 @@ footer {
     align-items: center;
 }
 
-.values.dark-theme {
-    background-color: #0d2116;
-    color: #fff;
-    padding: 120px 10%;
-}
-
-.values-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: 60px;
-}
-
-.value-card {
+/* Vision & Mission Section */
+.vision-mission {
+    background-color: #a4b294; /* Light olive/beige */
+    padding: 100px 10%;
+    position: relative;
     text-align: center;
-    padding: 60px 40px;
-    border: 1px solid rgba(255,255,255,0.1);
-    background-color: rgba(255,255,255,0.03);
-    transition: all 0.4s ease;
 }
 
-.value-card:hover {
-    background-color: rgba(255,255,255,0.08);
-    transform: translateY(-10px);
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
-.value-card h3 {
-    color: #a0ac94;
-    margin-bottom: 20px;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+.vm-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.vm-eyebrow {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.vm-item h2 {
+    font-size: 3.5rem; /* Large text like the image */
+    color: #071f14;
+    margin: 0 0 20px 0;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.vm-item p {
+    color: #071f14;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .vm-item h2 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Redesigned Values Section */
+.values.dark-theme {
+    background-color: #071f14;
+    color: #fff;
+    padding: 120px 0;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.values-title-wrap {
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 5;
+}
+
+.values-title-wrap span {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 5px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.values-title-wrap h2 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+    color: #fff;
+}
+
+.values-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+    position: relative;
+    z-index: 5;
+}
+
+.values-new-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.value-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.value-circle {
+    width: 180px;
+    height: 180px;
+    background-color: #a4b294; /* Muted light green tone from image */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
+    position: relative;
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden; /* Added to clip images to the circle */
+}
+
+.value-circle:hover {
+    transform: scale(1.05);
+}
+
+.value-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fill the circle fully */
+}
+
+.value-item h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    line-height: 1.3;
+    max-width: 250px; /* Increased max-width to allow larger text to fit */
+    margin: 0;
+}
+
+.side-decor-values {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 220px;
+    opacity: 0.2;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.side-decor-values.left {
+    left: -50px;
+}
+
+.side-decor-values.right {
+    right: -50px;
+}
+
+@media (max-width: 900px) {
+    .values-new-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .values-separator {
+        height: 60px;
+    }
 }
 
 .contact-form {
